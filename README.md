@@ -1,4 +1,7 @@
-### Hi there 👋
+# 个人介绍
+- 🔭 本人目前是GDUT计科专业的一名大三学生。
+- 🌱 目前主要的技术栈有安卓、人工智能。
+- 🏀 个人爱好是打篮球、游戏和音乐。
 
 <!--
 **Glowww-s/Glowww-s** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
