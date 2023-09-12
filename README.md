@@ -3,6 +3,12 @@
 - 🌱 目前主要的技术栈有安卓、人工智能。
 - 🏀 个人爱好是打篮球、游戏和音乐。
 
+# 仓库说明
+> 本仓库为本人大学软件工程课程的作业仓库。
+包含内容如下：
+- 3121005262：该文件夹为个人项目作业——论文查重程序，使用python进行设计开发，包含程序源代码、测试用例、依赖环境等内容。
+- ......
+
 <!--
 **Glowww-s/Glowww-s** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
