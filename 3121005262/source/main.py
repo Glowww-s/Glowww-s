@@ -2,6 +2,7 @@ import argparse
 import os
 from keywords import extract_keywords
 from frequency import word_frequency
+from merge import vector_merge
 
 # 获取脚本路径
 mainPath = os.path.dirname(__file__)
@@ -22,7 +23,7 @@ with open(args.text1Path, 'r', encoding='utf-8') as f1, open(args.text2Path, 'r'
 word_lists = extract_keywords(texts, mainPath)
 
 # 计算词频
-wordfreq_lists = word_frequency(word_lists)
-keyword_lists = [wordfreq_list.keys() for wordfreq_list in wordfreq_lists]
+wordfreq_dicts = word_frequency(word_lists)
 
-#
+# 合并计算文档向量
+doc_vectors = vector_merge(wordfreq_dicts)
