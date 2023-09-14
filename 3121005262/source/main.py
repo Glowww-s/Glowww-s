@@ -3,6 +3,7 @@ import os
 from keywords import extract_keywords
 from frequency import word_frequency
 from merge import vector_merge
+from similar import cosine_similarity
 
 # 获取脚本路径
 mainPath = os.path.dirname(__file__)
@@ -27,3 +28,7 @@ wordfreq_dicts = word_frequency(word_lists)
 
 # 合并计算文档向量
 doc_vectors = vector_merge(wordfreq_dicts)
+
+# 计算余弦相似度
+similarity = cosine_similarity(doc_vectors)
+
