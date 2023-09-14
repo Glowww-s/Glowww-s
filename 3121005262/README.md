@@ -54,17 +54,20 @@ PSP是卡耐基梅隆大学（CMU）的专家们针对软件工程师所提出�
 
 - README.md：即本文件，用于说明项目的实施流程、需求分析、设计等内容。
 - source：python源代码文件夹。
-  - requirements.txt：程序运行环境所依赖的python软件包列表。
+  - **requirements.txt**：程序运行环境所依赖的python软件包列表。
   - hit_stopwords.txt：哈工大停用词表。
-  - main.py：主文件，程序运行入口，用于处理IO和调用关系。
+  - **main.py**：主文件，程序运行入口，用于处理IO和调用关系。
   - keywords.py：分词提取模块文件，用于对文本进行去停用词和分词。
   - frequency.py： 统计词频模块文件，用于根据提取词统计文件词频。
   - merge.py：合并文档向量模块文件，生成各文件合并后的文档向量。
   - similar.py：计算相似度模块文件，计算文档向量间的余弦相似度作为重复率结果。
-- tests：提供的参考测试用例。
+  - **test_main.py**：单元测试代码。
+- tests：测试用例。
 - outputs：默认输出结果文件的文件夹。
-  - result_analysis.html：程序性能分析可视化展示。
   - result0.txt：默认参数结果文件。
+- reports：各种分析报告文件夹。
+  - **result_analysis.html**：程序性能分析可视化展示。
+  - 
 
 ## 3.2 功能结构
 
@@ -108,11 +111,29 @@ $$
 
 ![流程图](https://raw.githubusercontent.com/Glowww-s/picture/main/%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
 
+## 3.4 程序优点
+
+- 逻辑简单，方便开发，易于分析调试。
+
 # 4 分析测试
 
+## 4.1 运行说明
 
 
-# 5 参考资料
+
+## 4.2 测试
+
+
+
+## 异常处理
+
+
+
+# 5 总结
+
+
+
+# 6 参考资料
 
 - [python实现余弦相似度文本比较 - 醉曦 - 博客园 (cnblogs.com)](https://www.cnblogs.com/zuixime0515/p/9206861.html)
 - [goto456/stopwords: 中文常用停用词表（哈工大停用词表、百度停用词表等） (github.com)](https://github.com/goto456/stopwords)
