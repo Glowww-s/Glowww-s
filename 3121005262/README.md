@@ -118,23 +118,23 @@ $$
 
 ## 4.1 运行说明
 
+**Prepare：**python3.11
+
 1. 根据requirements.txt文件配置好程序运行环境。
 
 2. 在3121005262文件夹路径下，命令行运行如下命令：
 
    ```
-   python main.py --text1Path [原文文件] --text2Path [抄袭版论文的文件] --resultPath[答案文件]
+   python main.py --text1Path [原文文件] --text2Path [抄袭版论文的文件] --resultPath [答案文件]
    ```
 
-   
-
-
+​		若运行成功，将在参数[答案文件]指定路径得到输出结果文件。
 
 ## 4.2 测试
 
 
 
-## 异常处理
+## 4.3 异常处理
 
 
 
