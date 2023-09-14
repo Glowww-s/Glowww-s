@@ -1,19 +1,7 @@
 import argparse
 import chardet
 import os
-
-
-def check_charset(file_path):
-    """
-    用于判断文件的编码方式，从而能够正确读写文件。
-    :param file_path: 文件路径
-    :return: 文件编码方式
-    """
-    with open(file_path, "rb") as tf:
-        data = tf.read(4)
-        charset = chardet.detect(data)['encoding']
-    return charset
-
+from keywords import extract_keywords
 
 # 获取脚本路径
 mainPath = os.path.dirname(__file__)
@@ -27,5 +15,11 @@ parser.add_argument("--resultPath", default=mainPath + "/../outputs/result0.txt"
 args = parser.parse_args()
 
 # 打开目标文件
-with open(args.text1Path, 'r', encoding=check_charset(args.text1Path)) as f1, open(args.text1Path, 'r', encoding=check_charset(args.text1Path)) as f2:
-    texts = [f1.readlines(), f2.readlines()]
+with open(args.text1Path, 'r', encoding='utf-8') as f1, open(args.text2Path, 'r', encoding='utf-8') as f2:
+    texts = [''.join(f1.readlines()), ''.join(f2.readlines())]  # 各合并成一条字符串
+
+# 提取关键词
+word_lists = extract_keywords(texts, mainPath)
+
+# 计算词频
+

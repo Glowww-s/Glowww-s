@@ -20,15 +20,15 @@ PSP是卡耐基梅隆大学（CMU）的专家们针对软件工程师所提出�
 | · Design Spec                           | · 生成设计文档                          | 60               | 80               |
 | · Design Review                         | · 设计复审                              | 30               | 15               |
 | · Coding Standard                       | · 代码规范 (为目前的开发制定合适的规范) | 20               |                  |
-| · Design                                | · 具体设计                              | 60               |                  |
-| · Coding                                | · 具体编码                              | 180              |                  |
+| · Design                                | · 具体设计                              | 60               | 47               |
+| · Coding                                | · 具体编码                              | 300              | 360              |
 | · Code Review                           | · 代码复审                              | 60               |                  |
 | · Test                                  | · 测试（自我测试，修改代码，提交修改）  | 120              |                  |
 | Reporting                               | 报告                                    |                  |                  |
 | · Test Repor                            | · 测试报告                              | 60               |                  |
 | · Size Measurement                      | · 计算工作量                            | 30               |                  |
 | · Postmortem & Process Improvement Plan | · 事后总结, 并提出过程改进计划          | 30               |                  |
-|                                         | · 合计                                  | 700              |                  |
+|                                         | · 合计                                  |                  |                  |
 
 # 2 需求分析
 
@@ -90,3 +90,7 @@ PSP是卡耐基梅隆大学（CMU）的专家们针对软件工程师所提出�
 # 5 参考资料
 
 - [python实现余弦相似度文本比较 - 醉曦 - 博客园 (cnblogs.com)](https://www.cnblogs.com/zuixime0515/p/9206861.html)
+- [goto456/stopwords: 中文常用停用词表（哈工大停用词表、百度停用词表等） (github.com)](https://github.com/goto456/stopwords)
+
+
+
