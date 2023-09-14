@@ -21,7 +21,7 @@ PSP是卡耐基梅隆大学（CMU）的专家们针对软件工程师所提出�
 | · Design Review                         | · 设计复审                              | 30               | 15               |
 | · Coding Standard                       | · 代码规范 (为目前的开发制定合适的规范) | 20               | 25               |
 | · Design                                | · 具体设计                              | 60               | 47               |
-| · Coding                                | · 具体编码                              | 300              | 360              |
+| · Coding                                | · 具体编码                              | 360              | 420              |
 | · Code Review                           | · 代码复审                              | 60               |                  |
 | · Test                                  | · 测试（自我测试，修改代码，提交修改）  | 120              |                  |
 | Reporting                               | 报告                                    |                  |                  |
@@ -53,6 +53,7 @@ PSP是卡耐基梅隆大学（CMU）的专家们针对软件工程师所提出�
 ## 3.1 文件结构
 
 - README.md：即本文件，用于说明项目的实施流程、需求分析、设计等内容。
+- requirements.txt：项目环境依赖说明文件。
 - source：python源代码文件夹。
   - requirements.txt：程序运行环境所依赖的python软件包列表。
   - main.py：主文件，程序运行入口，用于处理IO和调用关系。

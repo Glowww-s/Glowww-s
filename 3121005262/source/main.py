@@ -34,4 +34,4 @@ similarity = cosine_similarity(doc_vectors)
 
 # 结果写入文件
 with open(args.resultPath, 'w', encoding='utf-8') as f:
-    f.write(str(format(similarity, '.3f')))
+    f.write(format(similarity, '.3f'))
