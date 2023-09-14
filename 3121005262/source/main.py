@@ -32,3 +32,6 @@ doc_vectors = vector_merge(wordfreq_dicts)
 # 计算余弦相似度
 similarity = cosine_similarity(doc_vectors)
 
+# 结果写入文件
+with open(args.resultPath, 'w', encoding='utf-8') as f:
+    f.write(str(format(similarity, '.3f')))

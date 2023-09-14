@@ -19,7 +19,7 @@ PSP是卡耐基梅隆大学（CMU）的专家们针对软件工程师所提出�
 | · Analysis                              | · 需求分析 (包括学习新技术)             | 30               | 50               |
 | · Design Spec                           | · 生成设计文档                          | 60               | 80               |
 | · Design Review                         | · 设计复审                              | 30               | 15               |
-| · Coding Standard                       | · 代码规范 (为目前的开发制定合适的规范) | 20               |                  |
+| · Coding Standard                       | · 代码规范 (为目前的开发制定合适的规范) | 20               | 25               |
 | · Design                                | · 具体设计                              | 60               | 47               |
 | · Coding                                | · 具体编码                              | 300              | 360              |
 | · Code Review                           | · 代码复审                              | 60               |                  |
