@@ -1,7 +1,7 @@
 import argparse
-import chardet
 import os
 from keywords import extract_keywords
+from frequency import word_frequency
 
 # 获取脚本路径
 mainPath = os.path.dirname(__file__)
@@ -18,8 +18,11 @@ args = parser.parse_args()
 with open(args.text1Path, 'r', encoding='utf-8') as f1, open(args.text2Path, 'r', encoding='utf-8') as f2:
     texts = [''.join(f1.readlines()), ''.join(f2.readlines())]  # 各合并成一条字符串
 
-# 提取关键词
+# 分词预处理
 word_lists = extract_keywords(texts, mainPath)
 
 # 计算词频
+wordfreq_lists = word_frequency(word_lists)
+keyword_lists = [wordfreq_list.keys() for wordfreq_list in wordfreq_lists]
 
+#
