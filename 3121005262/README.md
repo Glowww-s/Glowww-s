@@ -54,9 +54,7 @@ PSP是卡耐基梅隆大学（CMU）的专家们针对软件工程师所提出�
 
 - README.md：即本文件，用于说明项目的实施流程、需求分析、设计等内容。
 - source：python源代码文件夹。
-  - **requirements.txt**：程序运行环境所依赖的python软件包列表。
   - hit_stopwords.txt：哈工大停用词表。
-  - **main.py**：主文件，程序运行入口，用于处理IO和调用关系。
   - keywords.py：分词提取模块文件，用于对文本进行去停用词和分词。
   - frequency.py： 统计词频模块文件，用于根据提取词统计文件词频。
   - merge.py：合并文档向量模块文件，生成各文件合并后的文档向量。
@@ -67,7 +65,8 @@ PSP是卡耐基梅隆大学（CMU）的专家们针对软件工程师所提出�
   - result0.txt：默认参数结果文件。
 - reports：各种分析报告文件夹。
   - **result_analysis.html**：程序性能分析可视化展示。
-  - 
+- **main.py**：主文件，程序运行入口，用于处理IO和调用关系。
+- **requirements.txt**：程序运行环境所依赖的python软件包列表。
 
 ## 3.2 功能结构
 
@@ -118,6 +117,16 @@ $$
 # 4 分析测试
 
 ## 4.1 运行说明
+
+1. 根据requirements.txt文件配置好程序运行环境。
+
+2. 在3121005262文件夹路径下，命令行运行如下命令：
+
+   ```
+   python main.py --text1Path [原文文件] --text2Path [抄袭版论文的文件] --resultPath[答案文件]
+   ```
+
+   
 
 
 

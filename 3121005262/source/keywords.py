@@ -25,7 +25,7 @@ def extract_keywords(texts, main_path):
     # 分词
     cut_lists = [word_cut(text) for text in texts]
     # 读取停用词表
-    stopword_list = get_stopword_list(main_path + '/hit_stopwords.txt')
+    stopword_list = get_stopword_list(main_path + '/source/hit_stopwords.txt')
     stopword_list.extend(['\n', ' '])
     # 去除停用词
     word_lists = [clean_stopword(cut_list, stopword_list) for cut_list in cut_lists]

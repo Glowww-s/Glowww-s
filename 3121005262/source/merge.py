@@ -1,5 +1,6 @@
 import numpy as np
 
+
 # 合并计算文档向量
 def vector_merge(wordfreq_dicts):
     keyword_lists = [wordfreq_list.keys() for wordfreq_list in wordfreq_dicts]  # 关键词列表
@@ -8,4 +9,3 @@ def vector_merge(wordfreq_dicts):
     assert (doc_dicts[0].keys() == doc_dicts[1].keys()), "合并文档向量key不一致"  # 检测合并向量一致性
     doc_vectors = [np.array(list(doc_dict.values())) for doc_dict in doc_dicts]
     return doc_vectors
-
