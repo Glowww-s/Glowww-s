@@ -22,8 +22,8 @@ PSP是卡耐基梅隆大学（CMU）的专家们针对软件工程师所提出�
 | · Coding Standard                       | · 代码规范 (为目前的开发制定合适的规范) | 20               | 25               |
 | · Design                                | · 具体设计                              | 60               | 47               |
 | · Coding                                | · 具体编码                              | 360              | 420              |
-| · Code Review                           | · 代码复审                              | 60               |                  |
-| · Test                                  | · 测试（自我测试，修改代码，提交修改）  | 120              |                  |
+| · Code Review                           | · 代码复审                              | 60               | 46               |
+| · Test                                  | · 测试（自我测试，修改代码，提交修改）  | 120              | 180              |
 | Reporting                               | 报告                                    |                  |                  |
 | · Test Repor                            | · 测试报告                              | 60               |                  |
 | · Size Measurement                      | · 计算工作量                            | 30               |                  |
@@ -59,13 +59,13 @@ PSP是卡耐基梅隆大学（CMU）的专家们针对软件工程师所提出�
   - frequency.py： 统计词频模块文件，用于根据提取词统计文件词频。
   - merge.py：合并文档向量模块文件，生成各文件合并后的文档向量。
   - similar.py：计算相似度模块文件，计算文档向量间的余弦相似度作为重复率结果。
-  - **test_main.py**：单元测试代码。
 - tests：测试用例。
 - outputs：默认输出结果文件的文件夹。
   - result0.txt：默认参数结果文件。
 - reports：各种分析报告文件夹。
   - **result_analysis.html**：程序性能分析可视化展示。
 - **main.py**：主文件，程序运行入口，用于处理IO和调用关系。
+- **test_main.py**：单元测试代码。
 - **requirements.txt**：程序运行环境所依赖的python软件包列表。
 
 ## 3.2 功能结构
@@ -132,7 +132,27 @@ $$
 
 ## 4.2 测试
 
+### 4.2.1 单元测试
 
+- 部分代码：
+
+  ```python
+  class TestMain(unittest.TestCase):
+      def test_word_frequency(self):
+          """
+          Test word frequency module
+          """
+          texts = [['这是', '这是', '测试', '文本', '1'], 
+                   ['这是', '测试', '测试', '文本', '2']]
+          results = main.word_frequency(texts)
+          self.assertEqual(results, [{'这是': 2, '测试': 1, '文本': 1, '1': 1}, 
+                                     {'这是': 1, '测试': 2, '文本': 1, '2': 1}])
+  
+  ```
+
+- 覆盖率表格：
+
+  <img src="https://raw.githubusercontent.com/Glowww-s/picture/main/image-20230915215642449.png" alt="image-20230915215642449" style="zoom:150%;" />
 
 ## 4.3 异常处理
 
