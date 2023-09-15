@@ -17,14 +17,15 @@ def readfile(para):
     return ts
 
 
-def writefile(para):
+def writefile(para, result):
     """
     写文件
+    :param result: 计算得到的相似度结果
     :param para: 命令行参数
     :return: None
     """
     with open(para.resultPath, 'w', encoding='utf-8') as f:
-        f.write(format(similarity, '.3f'))
+        f.write(format(result, '.3f'))
 
 
 # 获取脚本路径
@@ -48,10 +49,10 @@ word_lists = extract_keywords(texts, mainPath)
 wordfreq_dicts = word_frequency(word_lists)
 
 # 合并计算文档向量
-doc_vectors = vector_merge(wordfreq_dicts)
+doc_dicts = vector_merge(wordfreq_dicts)
 
 # 计算余弦相似度
-similarity = cosine_similarity(doc_vectors)
+similarity = cosine_similarity(doc_dicts)
 
 # 结果写入文件
-writefile(args)
+writefile(args, similarity)
