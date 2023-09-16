@@ -1,5 +1,7 @@
 # 个人项目——论文查重程序
 
+> 作业博客，也是说明文档
+
 | 这个作业属于哪个课程 | https://edu.cnblogs.com/campus/gdgy/CSGrade21-34             |
 | :------------------- | :----------------------------------------------------------- |
 | 这个作业要求在哪里   | https://edu.cnblogs.com/campus/gdgy/CSGrade21-34/homework/13023 |
@@ -21,14 +23,14 @@ PSP是卡耐基梅隆大学（CMU）的专家们针对软件工程师所提出�
 | · Design Review                         | · 设计复审                              | 30               | 15               |
 | · Coding Standard                       | · 代码规范 (为目前的开发制定合适的规范) | 20               | 25               |
 | · Design                                | · 具体设计                              | 60               | 47               |
-| · Coding                                | · 具体编码                              | 360              | 420              |
-| · Code Review                           | · 代码复审                              | 60               | 46               |
+| · Coding                                | · 具体编码                              | 360              | 450              |
+| · Code Review                           | · 代码复审                              | 120              | 130              |
 | · Test                                  | · 测试（自我测试，修改代码，提交修改）  | 120              | 180              |
 | Reporting                               | 报告                                    |                  |                  |
 | · Test Repor                            | · 测试报告                              | 60               | 48               |
 | · Size Measurement                      | · 计算工作量                            | 30               | 10               |
 | · Postmortem & Process Improvement Plan | · 事后总结, 并提出过程改进计划          | 30               | 10               |
-|                                         | · 合计                                  |                  |                  |
+|                                         | · 合计                                  | 940              | 1070             |
 
 # 2 需求分析
 
@@ -52,8 +54,8 @@ PSP是卡耐基梅隆大学（CMU）的专家们针对软件工程师所提出�
 
 ## 3.1 文件结构
 
-- README.md：即本文件，用于说明项目的实施流程、需求分析、设计等内容。
-- source：python源代码文件夹。
+- README.md：即本文件，用于说明项目的实施流程、需求分析、设计、测试等内容。
+- source：python模块源代码文件夹。
   - hit_stopwords.txt：哈工大停用词表。
   - keywords.py：分词提取模块文件，用于对文本进行去停用词和分词。
   - frequency.py： 统计词频模块文件，用于根据提取词统计文件词频。
@@ -62,10 +64,11 @@ PSP是卡耐基梅隆大学（CMU）的专家们针对软件工程师所提出�
 - tests：测试用例。
 - outputs：默认输出结果文件的文件夹。
   - result0.txt：默认参数结果文件。
-- reports：各种分析报告文件夹。
+- reports：分析报告文件夹。
   - **result_analysis.html**：程序性能分析可视化展示。
 - **main.py**：主文件，程序运行入口，用于处理IO和调用关系。
 - **test_main.py**：单元测试代码。
+- .coverage：单元测试覆盖率数据。
 - **requirements.txt**：程序运行环境所依赖的python软件包列表。
 
 ## 3.2 功能结构
@@ -76,8 +79,9 @@ PSP是卡耐基梅隆大学（CMU）的专家们针对软件工程师所提出�
 
 利用python的第三方库jieba对中文进行拆解分词，再通过网络检索得到的哈工大停用词表对分词结果进行预处理，最终提取其关键词。
 
-该模块共包含四个关键函数，分别是word_cut函数、get_stopword_list函数、clean_stopword函数、extract_keywords函数，其作用及大致实现如下：
+该模块共包含五个关键函数，分别是detect_language函数、word_cut函数、get_stopword_list函数、clean_stopword函数、extract_keywords函数，其作用及大致实现如下：
 
+- detect_language函数【输入字符串，输出None】：通过调用langdetect的detect对象对字符串的语言进行检测判断，若检测出非中文字符串则中断程序，输出错误信息并退出。
 - word_cut函数【输入字符串，输出字符串列表】：通过调用jieba库的lcut方法对输入字符串进行切割，使用的是默认全切割模式，在保证正确率的前提下，兼顾执行速度。
 - get_stopword_list函数【输入停用词文件路径，输出字符串列表】：通过打开指定的停用词表文件，使用列表生成器读取文件内容到一个字符串列表。
 - clean_stopword函数【输入两个字符串列表（待处理列表、停用词列表），输出一个字符串列表（处理结果）】。
