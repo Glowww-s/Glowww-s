@@ -1,4 +1,14 @@
 import jieba
+from langdetect import detect
+
+
+# 检测字符串语言
+def detect_language(text):
+    try:
+        assert (detect(text) == 'zh-cn')
+    except AssertionError:
+        print('ERROR：输入文本语言错误，请检查输入文本是否为中文。')
+        exit()
 
 
 # 使用jieba进行分词
@@ -22,6 +32,8 @@ def clean_stopword(word_list, stopword_list):
 
 # 提取关键词
 def extract_keywords(texts, main_path):
+    # 检测语言
+    [detect_language(text) for text in texts]
     # 分词
     cut_lists = [word_cut(text) for text in texts]
     # 读取停用词表

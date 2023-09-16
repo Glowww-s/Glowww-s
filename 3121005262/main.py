@@ -12,9 +12,15 @@ def readfile(para):
     :param para: 命令行参数
     :return: 两个字符串的列表
     """
-    with open(para.text1Path, 'r', encoding='utf-8') as f1, open(para.text2Path, 'r', encoding='utf-8') as f2:
-        ts = [''.join(f1.readlines()), ''.join(f2.readlines())]  # 各合并成一条字符串
-    return ts
+    try:
+        with open(para.text1Path, 'r', encoding='utf-8') as f1, open(para.text2Path, 'r', encoding='utf-8') as f2:
+            ts = [''.join(f1.readlines()), ''.join(f2.readlines())]  # 各合并成一条字符串
+        return ts
+    except FileNotFoundError:
+        print("ERROR: 未找到指定文件，请检查参数路径是否存在。")
+    except UnicodeDecodeError:
+        print("ERROR: 文件编码错误，请检查输入文件是否为txt文本文件。")
+    exit()
 
 
 def writefile(para, result):
@@ -39,7 +45,7 @@ parser.add_argument("--text2Path", default=mainPath + "/tests/orig_0.8_add.txt",
 parser.add_argument("--resultPath", default=mainPath + "/outputs/result0.txt", help="The path of result file.")
 args = parser.parse_args()
 
-# 打开目标文件
+# 读取目标文件
 texts = readfile(args)
 
 # 分词预处理
